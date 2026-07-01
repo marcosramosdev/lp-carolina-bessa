@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import '../styles/global.css';
+import 'aos/dist/aos.css';
 import ogSource from '../assets/images/foto-perfil-1.jpeg';
 import { SITE_NAME, SITE_TITLE, SITE_DESCRIPTION, CLINIC, WHATSAPP_DISPLAY } from '../consts';
 
@@ -70,5 +71,13 @@ const jsonLd = {
   </head>
   <body>
     <slot />
+    <script>
+      import AOS from 'aos';
+      AOS.init({
+        duration: 700,
+        once: true,
+        offset: 80,
+      });
+    </script>
   </body>
 </html>
