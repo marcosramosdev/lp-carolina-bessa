@@ -1,10 +1,24 @@
 ---
-// PLACEHOLDER: substituir os 3 cards abaixo pelos depoimentos reais assim que
-// passarem pela validação técnica, ética e jurídica mencionada na copy (§ pendências).
 import { Star } from "@lucide/astro";
 import Eyebrow from "../components/Eyebrow.astro";
 
-const placeholders = [1, 2, 3];
+const depoimentos = [
+  {
+    nome: "Vitor Katz",
+    texto:
+      "Carolina é uma profissional espetacular! Extremamente atenciosa e detalhista, explicou todos os procedimentos antes, durante e depois de sua realização, mantendo o paciente informado e seguro em cada etapa. O atendimento é muito cuidadoso e acolhedor, proporcionando conforto até mesmo para quem tem maior sensibilidade ou receio de procedimentos odontológicos.",
+  },
+  {
+    nome: "Rejane Sobreira",
+    texto:
+      "Dra. Carol é uma excelente profissional! Seu consultório é lindo e a localização muito boa. Durante todo tratamento ela me passou tranquilidade e confiança. E o resultado foi perfeito.",
+  },
+  {
+    nome: "Maria Eduarda Ramalho",
+    texto:
+      "Minhas experiências no consultório da Dra. Carolina são sempre excelentes! Sempre faço minhas consultas de rotina com ela, e ano passado fiz aplicação de facetas em resina e amei o resultado! Dra. Carolina é extremamente acolhedora, paciente e cuidadosa. Me sinto muito bem cuidada do início ao fim do atendimento! Sempre recomendo!",
+  },
+];
 ---
 
 <section class="bg-creme py-24 lg:py-36">
@@ -14,28 +28,23 @@ const placeholders = [1, 2, 3];
       <h2 class="mt-5 text-h2 font-light text-tinta">
         O que dizem os pacientes atendidos pela Dra. Carolina
       </h2>
-      <p class="mt-4 text-tinta-soft">
-        Novos depoimentos serão publicados em breve, após validação.
-      </p>
     </div>
 
     <div class="mt-16 grid gap-8 sm:grid-cols-3">
       {
-        placeholders.map((n, index) => (
+        depoimentos.map((dep, index) => (
           <div
-            class="rounded-2xl border border-dashed border-salvia-200 bg-salvia-50/40 p-7"
+            class="rounded-2xl border border-salvia-200 bg-white p-7"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
             <div class="flex gap-0.5" aria-hidden="true">
               {Array.from({ length: 5 }).map(() => (
-                <Star size={16} stroke-width={1.5} class="text-salvia-300" />
+                <Star size={16} stroke-width={1.5} fill="currentColor" class="text-salvia-300" />
               ))}
             </div>
-            <p class="mt-4 text-sm italic text-tinta-soft/70">
-              Depoimento em validação — espaço reservado nº {n}.
-            </p>
-            <p class="mt-4 text-sm font-medium text-tinta-soft/70">Nome do paciente</p>
+            <p class="mt-4 text-sm italic text-tinta-soft">"{dep.texto}"</p>
+            <p class="mt-4 text-sm font-medium text-tinta">{dep.nome}</p>
           </div>
         ))
       }
