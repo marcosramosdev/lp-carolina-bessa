@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import { Search } from "@lucide/astro";
+import atendimentoPhoto from "../assets/images/foto-atendimento-1.jpeg";
+import Eyebrow from "../components/Eyebrow.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { WA_MESSAGES } from "../consts";
+
+const observations = [
+  "Onde o dente foi perdido",
+  "Como estão os dentes vizinhos e a gengiva",
+  "A condição das próteses e restaurações existentes",
+  "O encaixe da mordida",
+  "Como a mastigação está distribuída",
+  "Quais exames podem ser necessários",
+  "O que mais incomoda você hoje",
+];
+---
+
+<section class="bg-creme py-24 lg:py-36">
+  <div
+    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[380px_1fr] lg:items-start lg:gap-20 lg:px-10"
+  >
+    <div class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10" data-aos="fade-up">
+      <Image
+        src={atendimentoPhoto}
+        alt="Dra. Carolina Bessa realizando procedimento odontológico em consultório"
+        widths={[380, 560, 760]}
+        sizes="(min-width: 1024px) 380px, 90vw"
+        loading="lazy"
+        class="aspect-[4/5] w-full object-cover"
+      />
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="150">
+      <Eyebrow tone="salvia">Reabilitação oral</Eyebrow>
+
+      <h2 class="mt-5 text-h2 font-light text-tinta">
+        Quando mastigar começa a exigir atenção demais
+      </h2>
+
+      <div class="mt-8 space-y-5 text-tinta-soft">
+        <p>
+          Você escolhe o lado da boca. Evita uma carne mais firme. Sente a prótese mexer.
+          Percebe que a mordida já não encaixa como antes.
+        </p>
+        <p>
+          Esses incômodos podem aparecer após a perda de um dente, com o desgaste de uma
+          prótese antiga ou quando há alterações em diferentes regiões da boca.
+        </p>
+      </div>
+
+      <h3 class="mt-8 font-semibold text-tinta">Na avaliação reabilitadora, a Dra. Carolina observa:</h3>
+      <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+        {
+          observations.map((item) => (
+            <li class="flex items-start gap-2.5 text-sm text-tinta-soft">
+              <Search size={16} stroke-width={2} class="mt-0.5 shrink-0 text-salvia-600" />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="mt-6 text-tinta-soft">
+        Conforme as condições encontradas, podem ser consideradas próteses, implantes,
+        coroas, restaurações ou um planejamento que envolva mais de uma etapa.
+      </p>
+
+      <p class="mt-4 text-sm italic text-tinta-soft/80">
+        A falta de um dente, sozinha, não confirma a indicação do tratamento. É necessário
+        examinar a região e avaliar as condições clínicas.
+      </p>
+
+      <WhatsAppButton
+        message={WA_MESSAGES.reabilitacao}
+        label="Agendar avaliação de reabilitação"
+        class="mt-8"
+      />
+    </div>
+  </div>
+</section>

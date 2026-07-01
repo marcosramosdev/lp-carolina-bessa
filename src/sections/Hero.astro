@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import { ChevronDown } from "@lucide/astro";
+import heroPortrait from "../assets/images/foto-perfil-1.jpeg";
+import Eyebrow from "../components/Eyebrow.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import SmileArc from "../components/SmileArc.astro";
+import { WA_MESSAGES } from "../consts";
+---
+
+<section class="relative overflow-hidden bg-creme lg:flex lg:min-h-[calc(100vh-var(--header-h))] lg:items-center">
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -right-40 -top-32 h-96 w-96 rounded-full bg-lavanda-100 blur-3xl"
+  >
+  </div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-salvia-100 blur-3xl"
+  >
+  </div>
+
+  <div
+    class="relative mx-auto grid w-full max-w-7xl gap-12 px-6 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:px-10 lg:py-8"
+  >
+    <div class="max-w-xl" data-aos="fade-up">
+      <Eyebrow tone="salvia">Odontologia estética e reabilitadora · Graças, Recife</Eyebrow>
+
+      <h1 class="mt-5 text-display font-light text-tinta">
+        Voltar a mastigar com conforto. E com a segurança de um sorriso natural.
+      </h1>
+
+      <p class="mt-6 text-lg text-tinta-soft">
+        Se você perdeu um dente, usa uma prótese que incomoda ou quer melhorar o formato e a
+        cor dos dentes, a avaliação com a Dra. Carolina Bessa ajuda a entender o que pode
+        fazer sentido para o seu caso.
+      </p>
+
+      <p class="mt-4 text-lg text-tinta-soft">
+        Na consulta é avaliada sua saúde bucal, o equilíbrio da mordida e tudo isso é
+        alinhado com o que você espera do tratamento.
+      </p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <WhatsAppButton message={WA_MESSAGES.geral} label="Agendar avaliação pelo WhatsApp" />
+        <a
+          href="#como-funciona"
+          class="inline-flex items-center self-center text-sm font-semibold text-salvia-700 underline-offset-4 transition-colors hover:text-salvia-800 hover:underline"
+        >
+          Ver como funciona a avaliação
+        </a>
+      </div>
+
+      <p class="mt-6 text-sm text-tinta-soft">
+        Atendimento com horário marcado no bairro das Graças, em Recife.
+      </p>
+      <p class="mt-1 text-sm italic text-tinta-soft/80">
+        A indicação de qualquer tratamento depende de avaliação individual.
+      </p>
+    </div>
+
+    <div class="relative mx-auto w-full max-w-sm lg:max-w-md">
+      <div
+        class="overflow-hidden rounded-t-[9999px] rounded-b-[2.5rem] border-4 border-creme shadow-2xl shadow-salvia-900/10 ring-1 ring-salvia-100"
+      >
+        <Image
+          src={heroPortrait}
+          alt="Dra. Carolina Bessa sorrindo e olhando para a câmera em seu consultório"
+          widths={[400, 600, 800]}
+          sizes="(min-width: 1024px) 480px, 90vw"
+          loading="eager"
+          fetchpriority="high"
+          class="aspect-[3/4] w-full object-cover"
+        />
+      </div>
+      <SmileArc tone="terracota" class="absolute -bottom-8 left-1/2 w-36 -translate-x-1/2" />
+    </div>
+  </div>
+
+  <a
+    href="#faixa-confianca"
+    aria-label="Rolar para continuar"
+    class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-bounce text-salvia-500 transition-colors hover:text-salvia-700 lg:block"
+  >
+    <ChevronDown size={28} stroke-width={1.5} />
+  </a>
+</section>

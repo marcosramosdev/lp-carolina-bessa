@@ -1,0 +1,31 @@
+---
+// Elemento de assinatura visual: um traço em arco (eco do sorriso e do ícone da marca).
+// Puramente decorativo — sempre aria-hidden.
+interface Props {
+  tone?: "terracota" | "salvia" | "lavanda";
+  flip?: boolean;
+  class?: string;
+}
+
+const { tone = "salvia", flip = false, class: className = "" } = Astro.props;
+
+const stroke: Record<string, string> = {
+  terracota: "stroke-terracota-300",
+  salvia: "stroke-salvia-300",
+  lavanda: "stroke-lavanda-300",
+};
+---
+
+<svg
+  aria-hidden="true"
+  viewBox="0 0 400 60"
+  preserveAspectRatio="none"
+  class:list={["w-full h-auto", flip && "rotate-180", className]}
+>
+  <path
+    d="M0 6 Q200 60 400 6"
+    fill="none"
+    class:list={[stroke[tone]]}
+    stroke-width="1.5"
+  ></path>
+</svg>

@@ -1,0 +1,69 @@
+---
+import { Check } from "@lucide/astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { WA_MESSAGES } from "../consts";
+
+const items = [
+  "Perdeu um ou mais dentes",
+  "Pensa em fazer facetas em resina",
+  "Mastiga apenas de um lado",
+  "Sente desconforto com uma prótese",
+  "Percebe mudanças no encaixe da mordida",
+  "Deseja avaliar próteses ou implantes",
+  "Quer melhorar o sorriso preservando suas características",
+  "Precisa organizar um tratamento odontológico mais completo",
+];
+---
+
+<section class="bg-creme py-24 lg:py-36">
+  <div class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
+    <div class="max-w-xl" data-aos="fade-up">
+      <h2 class="text-h2 font-light text-tinta">
+        Você sente que precisa cuidar do sorriso, mas ainda não sabe por onde começar?
+      </h2>
+
+      <div class="mt-8 space-y-5 text-tinta-soft">
+        <p>
+          Às vezes, o problema aparece durante uma refeição: você evita mastigar de um lado
+          ou deixa de comer alimentos mais firmes.
+        </p>
+        <p>
+          Em outros casos, uma prótese que antes funcionava bem começa a incomodar, soltar
+          ou machucar.
+        </p>
+        <p>
+          Também há quem esteja bem com a mastigação, mas queira mudar algum detalhe do
+          sorriso. A cor, o formato ou o tamanho dos dentes incomoda, porém existe receio de
+          que o resultado fique exagerado.
+        </p>
+        <p>
+          Essas situações podem ter soluções diferentes. Por isso, a consulta começa pelo
+          exame da saúde bucal e por uma conversa sobre o que você percebe no dia a dia.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="rounded-3xl border border-salvia-100 bg-salvia-50/60 p-8 lg:p-10"
+      data-aos="fade-up"
+      data-aos-delay="150"
+    >
+      <h3 class="font-semibold text-tinta">A avaliação pode ajudar quem:</h3>
+      <ul class="mt-5 space-y-3">
+        {
+          items.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-tinta-soft">
+              <Check size={18} stroke-width={2} class="mt-0.5 shrink-0 text-salvia-600" />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <WhatsAppButton
+        message={WA_MESSAGES.geral}
+        label="Quero entender o meu caso"
+        class="mt-8 w-full"
+      />
+    </div>
+  </div>
+</section>

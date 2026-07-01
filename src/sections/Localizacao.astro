@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import { MapPin, Clock, Car, ExternalLink } from "@lucide/astro";
+import buildingPhoto from "../assets/images/foto-consultorio-2.jpeg";
+import Eyebrow from "../components/Eyebrow.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { WA_MESSAGES, CLINIC, MAPS_SEARCH_URL, MAPS_EMBED_URL, SITE_NAME } from "../consts";
+---
+
+<section id="localizacao" class="scroll-mt-24 bg-creme py-24 lg:py-36">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-20">
+      <div data-aos="fade-up">
+        <Eyebrow tone="terracota">Localização</Eyebrow>
+        <h2 class="mt-5 text-h2 font-light text-tinta">
+          Atendimento no bairro das Graças, em Recife
+        </h2>
+
+        <div class="mt-8 space-y-5">
+          <div class="flex items-start gap-3">
+            <MapPin size={20} stroke-width={1.5} class="mt-0.5 shrink-0 text-terracota-500" />
+            <div class="text-tinta-soft">
+              <p class="font-medium text-tinta">{SITE_NAME}</p>
+              <p class="mt-1 text-sm">{CLINIC.building}</p>
+              <p class="text-sm">{CLINIC.street}, {CLINIC.suite}</p>
+              <p class="text-sm">{CLINIC.neighborhood} — CEP {CLINIC.zip}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <Clock size={20} stroke-width={1.5} class="mt-0.5 shrink-0 text-terracota-500" />
+            <p class="text-sm text-tinta-soft">{CLINIC.hours}</p>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <Car size={20} stroke-width={1.5} class="mt-0.5 shrink-0 text-terracota-500" />
+            <p class="text-sm text-tinta-soft">{CLINIC.parking}</p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <WhatsAppButton message={WA_MESSAGES.geral} label="Agendar pelo WhatsApp" />
+          <a
+            href={MAPS_SEARCH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-salvia-700 underline-offset-4 transition-colors hover:text-salvia-800 hover:underline"
+          >
+            Abrir localização no mapa
+            <ExternalLink size={16} stroke-width={2} />
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        <Image
+          src={buildingPhoto}
+          alt="Fachada do Kronos Empresarial, no bairro das Graças, Recife"
+          widths={[480, 640, 800]}
+          sizes="(min-width: 1024px) 560px, 90vw"
+          loading="lazy"
+          class="aspect-[4/3] w-full object-cover"
+        />
+      </div>
+    </div>
+
+    <div class="mt-10 overflow-hidden rounded-2xl border border-salvia-100" data-aos="fade-up">
+      <iframe
+        src={MAPS_EMBED_URL}
+        title={`Mapa de localização — ${CLINIC.building}`}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="aspect-video w-full"
+      ></iframe>
+    </div>
+  </div>
+</section>

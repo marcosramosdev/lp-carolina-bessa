@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import { BadgeCheck } from "@lucide/astro";
+import perfilPhoto from "../assets/images/foto-perfil-2.jpeg";
+import Eyebrow from "../components/Eyebrow.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { WA_MESSAGES, CLINIC } from "../consts";
+---
+
+<section id="sobre" class="scroll-mt-24 bg-salvia-50 py-24 lg:py-36">
+  <div
+    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[380px_1fr] lg:items-center lg:gap-20 lg:px-10"
+  >
+    <div class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10" data-aos="fade-up">
+      <Image
+        src={perfilPhoto}
+        alt="Dra. Carolina Bessa sorrindo em seu consultório"
+        widths={[380, 560, 760]}
+        sizes="(min-width: 1024px) 380px, 90vw"
+        loading="lazy"
+        class="aspect-[4/5] w-full object-cover"
+      />
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="150">
+      <Eyebrow tone="salvia">Sobre a profissional</Eyebrow>
+      <h2 class="mt-5 text-h2 font-light text-tinta">Dra. Carolina Bessa</h2>
+
+      <div class="mt-8 space-y-5 text-tinta-soft">
+        <p>
+          A Dra. Carolina Bessa atua com odontologia estética e reabilitadora, incluindo o
+          planejamento de próteses, implantes, facetas em resina composta e tratamentos
+          voltados à recuperação da mastigação.
+        </p>
+        <p>
+          Durante a consulta, procura entender o que o paciente percebe no dia a dia,
+          examina as condições da boca e explica quais possibilidades podem ser avaliadas.
+        </p>
+        <p>
+          Quando há necessidade de exames ou de um tratamento com diferentes etapas, essas
+          informações são organizadas para que o paciente saiba como o planejamento poderá
+          seguir.
+        </p>
+      </div>
+
+      <div class="mt-6 flex items-start gap-3 rounded-2xl bg-creme p-5">
+        <BadgeCheck size={22} stroke-width={1.5} class="mt-0.5 shrink-0 text-salvia-600" />
+        <div class="text-sm text-tinta-soft">
+          <p class="font-medium text-tinta">{CLINIC.credentials}</p>
+          <p class="mt-1">{CLINIC.cro}</p>
+        </div>
+      </div>
+
+      <WhatsAppButton
+        message={WA_MESSAGES.geral}
+        label="Agendar com a Dra. Carolina"
+        class="mt-8"
+      />
+    </div>
+  </div>
+</section>

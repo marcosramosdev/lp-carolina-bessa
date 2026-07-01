@@ -1,0 +1,30 @@
+---
+import { MessageCircle } from "@lucide/astro";
+import { waLink } from "../consts";
+
+interface Props {
+  message: string;
+  label: string;
+  variant?: "primary" | "secondary";
+  class?: string;
+}
+
+const { message, label, variant = "primary", class: className = "" } = Astro.props;
+
+const styles =
+  variant === "primary"
+    ? "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 bg-terracota-500 text-creme hover:bg-terracota-600 transition-colors duration-200 focus-visible:outline-offset-4"
+    : "inline-flex items-center gap-1.5 text-salvia-700 underline-offset-4 hover:text-salvia-800 hover:underline transition-colors duration-200";
+
+const textStyles = "text-sm font-semibold";
+---
+
+<a
+  href={waLink(message)}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[textStyles, styles, className]}
+>
+  <MessageCircle size={16} stroke-width={2} />
+  {label}
+</a>

@@ -1,0 +1,31 @@
+---
+interface Props {
+  tone?: "terracota" | "salvia" | "lavanda";
+  class?: string;
+}
+
+const { tone = "terracota", class: className = "" } = Astro.props;
+
+const dot: Record<string, string> = {
+  terracota: "bg-terracota-500",
+  salvia: "bg-salvia-500",
+  lavanda: "bg-lavanda-500",
+};
+
+const text: Record<string, string> = {
+  terracota: "text-terracota-600",
+  salvia: "text-salvia-700",
+  lavanda: "text-lavanda-600",
+};
+---
+
+<span
+  class:list={[
+    "inline-flex items-center gap-2 text-eyebrow font-semibold uppercase",
+    text[tone],
+    className,
+  ]}
+>
+  <span class:list={["h-1.5 w-1.5 rounded-full", dot[tone]]}></span>
+  <slot />
+</span>

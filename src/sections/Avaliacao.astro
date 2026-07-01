@@ -1,0 +1,79 @@
+---
+import { ShieldCheck, Utensils, Smile, History, Target, FileText } from "@lucide/astro";
+import Eyebrow from "../components/Eyebrow.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { WA_MESSAGES } from "../consts";
+
+const topics = [
+  {
+    icon: ShieldCheck,
+    title: "Saúde bucal",
+    text: "Condição dos dentes, da gengiva, das restaurações e das próteses existentes.",
+  },
+  {
+    icon: Utensils,
+    title: "Mastigação e mordida",
+    text: "Como os dentes se encaixam e quais limitações você percebe ao comer ou falar.",
+  },
+  {
+    icon: Smile,
+    title: "Sorriso",
+    text: "Formato, proporção, cor e relação dos dentes com o rosto.",
+  },
+  {
+    icon: History,
+    title: "Histórico odontológico",
+    text: "Tratamentos anteriores, experiências no dentista e problemas que já voltaram a acontecer.",
+  },
+  {
+    icon: Target,
+    title: "Prioridades",
+    text: "O que mais incomoda você hoje e qual mudança teria maior impacto no seu dia a dia.",
+  },
+  {
+    icon: FileText,
+    title: "Exames",
+    text: "Radiografias, fotografias ou outros exames podem ser solicitados quando forem necessários para o diagnóstico.",
+  },
+];
+---
+
+<section id="avaliacao" class="scroll-mt-24 bg-lavanda-50 py-24 lg:py-36">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <Eyebrow tone="lavanda">A avaliação</Eyebrow>
+      <h2 class="mt-5 text-h2 font-light text-tinta">
+        O que a Dra. Carolina observa durante a consulta?
+      </h2>
+      <p class="mt-6 text-tinta-soft">
+        A avaliação começa com uma conversa sobre o que levou você ao consultório. Depois, a
+        Dra. Carolina realiza o exame clínico e organiza as informações necessárias para
+        orientar os próximos passos.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        topics.map(({ icon: Icon, title, text }, index) => (
+          <div
+            class="rounded-2xl border border-lavanda-100 bg-creme p-6"
+            data-aos="fade-up"
+            data-aos-delay={index * 80}
+          >
+            <Icon size={24} stroke-width={1.5} class="text-lavanda-600" />
+            <h3 class="mt-4 font-semibold text-tinta">{title}</h3>
+            <p class="mt-2 text-sm text-tinta-soft">{text}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="mt-10 max-w-2xl text-tinta-soft">
+      Depois dessa análise, a Dra. Carolina explica o que encontrou e conversa sobre as
+      possibilidades compatíveis com o caso. Quando há indicação de tratamento, as etapas
+      são organizadas de acordo com as necessidades clínicas.
+    </p>
+
+    <WhatsAppButton message={WA_MESSAGES.geral} label="Consultar horários disponíveis" class="mt-8" />
+  </div>
+</section>

@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import { Menu, X } from '@lucide/astro';
+import logo from '../assets/logo/CD_horizontal.png';
+import WhatsAppButton from './WhatsAppButton.astro';
+import { NAV_LINKS, WA_MESSAGES } from '../consts';
+---
+
+<header class="sticky top-0 z-40 h-20 border-b border-salvia-100 bg-creme/90 backdrop-blur-sm">
+  <div class="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-6 lg:px-10">
+    <a href="#" class="shrink-0">
+      <Image src={logo} alt="Dra. Carolina Bessa | Odontologia" height={40} width={180} />
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Navegação principal">
+      {
+        NAV_LINKS.map((link) => (
+          <a href={link.href} class="text-sm font-medium text-tinta-soft transition-colors hover:text-terracota-600">
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden md:inline-flex">
+      <WhatsAppButton message={WA_MESSAGES.geral} label="Agendar avaliação" />
+    </div>
+
+    <details class="group relative lg:hidden">
+      <summary
+        class="flex cursor-pointer list-none items-center justify-center rounded-full p-2 text-tinta [&::-webkit-details-marker]:hidden"
+        aria-label="Abrir menu"
+      >
+        <Menu size={24} class="group-open:hidden" />
+        <X size={24} class="hidden group-open:block" />
+      </summary>
+
+      <nav
+        class="absolute right-0 top-full mt-3 w-64 rounded-2xl border border-salvia-100 bg-creme p-5 shadow-lg"
+        aria-label="Navegação móvel"
+      >
+        <ul class="flex flex-col gap-4">
+          {
+            NAV_LINKS.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="block text-sm font-medium text-tinta-soft transition-colors hover:text-terracota-600"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <WhatsAppButton message={WA_MESSAGES.geral} label="Agendar avaliação" class="mt-5 w-full" />
+      </nav>
+    </details>
+  </div>
+</header>

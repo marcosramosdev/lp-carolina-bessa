@@ -1,0 +1,15 @@
+---
+import { MessageCircle } from "@lucide/astro";
+import { waLink, WA_MESSAGES } from "../consts";
+---
+
+<a
+  href={waLink(WA_MESSAGES.flutuante)}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Agendar pelo WhatsApp"
+  class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-terracota-500 px-5 py-3.5 text-sm font-semibold text-creme shadow-lg shadow-terracota-700/20 transition-colors hover:bg-terracota-600 lg:hidden"
+>
+  <MessageCircle size={20} stroke-width={2} />
+  Agendar pelo WhatsApp
+</a>

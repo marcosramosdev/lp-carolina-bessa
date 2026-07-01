@@ -1,0 +1,90 @@
+@import "@fontsource-variable/inter";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Salvia — verde-eucalipto: calma, confiança, fundos */
+  --color-salvia-50: #f1f5f1;
+  --color-salvia-100: #e2eae3;
+  --color-salvia-200: #c7d6c9;
+  --color-salvia-300: #a7bfab;
+  --color-salvia-400: #86a78c;
+  --color-salvia-500: #6b8f72;
+  --color-salvia-600: #56755c;
+  --color-salvia-700: #445e49;
+  --color-salvia-800: #37493b;
+  --color-salvia-900: #2c3b2f;
+
+  /* Lavanda — delicadeza, cuidado: realces secundários */
+  --color-lavanda-50: #f5f3f9;
+  --color-lavanda-100: #ece7f3;
+  --color-lavanda-200: #dad0e8;
+  --color-lavanda-300: #c3b4d8;
+  --color-lavanda-400: #a995c4;
+  --color-lavanda-500: #8f78af;
+  --color-lavanda-600: #77609a;
+  --color-lavanda-700: #614e7e;
+
+  /* Terracota — ação, desejo: CTAs */
+  --color-terracota-50: #fbf1ec;
+  --color-terracota-100: #f5dfd3;
+  --color-terracota-200: #eac1ac;
+  --color-terracota-300: #dda184;
+  --color-terracota-400: #ce8362;
+  --color-terracota-500: #c06b4a;
+  --color-terracota-600: #a5553a;
+  --color-terracota-700: #84442f;
+
+  /* Neutros quentes */
+  --color-creme: #faf6f0;
+  --color-areia: #efe7db;
+  --color-tinta: #2a2e29;
+  --color-tinta-soft: #565a54;
+
+  /* Escala tipográfica fluida */
+  --text-display: clamp(2.5rem, 1.6rem + 3.6vw, 3.75rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-h2: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.01em;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.14em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    --header-h: 5rem;
+  }
+
+  body {
+    background-color: var(--color-creme);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    font-weight: 400;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-terracota-500);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+

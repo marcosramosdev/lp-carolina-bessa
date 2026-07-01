@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import { Sparkles } from "@lucide/astro";
+import consultorioPhoto from "../assets/images/foto-consultorio-3.jpeg";
+import Eyebrow from "../components/Eyebrow.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { WA_MESSAGES } from "../consts";
+
+const considerations = [
+  "O formato e a proporção dos dentes",
+  "Como o sorriso aparece no rosto",
+  "A cor e as características naturais",
+  "O encaixe da mordida",
+  "A saúde dos dentes e da gengiva",
+  "O resultado que você espera",
+  "Os limites clínicos do tratamento",
+];
+---
+
+<section class="bg-salvia-50 py-24 lg:py-36">
+  <div
+    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_380px] lg:items-start lg:gap-20 lg:px-10"
+  >
+    <div data-aos="fade-up">
+      <Eyebrow tone="terracota">Estética dental</Eyebrow>
+
+      <h2 class="mt-5 text-h2 font-light text-tinta">
+        Melhorar o sorriso sem deixar os dentes com aspecto artificial
+      </h2>
+
+      <div class="mt-8 space-y-5 text-tinta-soft">
+        <p>
+          Talvez você queira corrigir um formato que incomoda, suavizar diferenças de
+          tamanho ou avaliar uma mudança de cor.
+        </p>
+        <p>
+          Antes de indicar facetas em resina ou qualquer outro procedimento estético, a Dra.
+          Carolina examina a saúde dos dentes, da gengiva e da mordida. Também observa as
+          características que já fazem parte do seu sorriso.
+        </p>
+      </div>
+
+      <h3 class="mt-8 font-semibold text-tinta">O planejamento pode considerar:</h3>
+      <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+        {
+          considerations.map((item) => (
+            <li class="flex items-start gap-2.5 text-sm text-tinta-soft">
+              <Sparkles size={16} stroke-width={2} class="mt-0.5 shrink-0 text-terracota-500" />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="mt-6 text-tinta-soft">
+        A proposta é encontrar uma solução compatível com a sua boca, sem copiar um modelo
+        de sorriso que talvez nem combine com você.
+      </p>
+
+      <WhatsAppButton
+        message={WA_MESSAGES.estetica}
+        label="Quero avaliar a estética do meu sorriso"
+        class="mt-8"
+      />
+    </div>
+
+    <div
+      class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10"
+      data-aos="fade-up"
+      data-aos-delay="150"
+    >
+      <Image
+        src={consultorioPhoto}
+        alt="Sala de consulta moderna da Dra. Carolina Bessa, com poltronas verdes"
+        widths={[380, 560, 760]}
+        sizes="(min-width: 1024px) 380px, 90vw"
+        loading="lazy"
+        class="aspect-[4/5] w-full object-cover"
+      />
+    </div>
+  </div>
+</section>

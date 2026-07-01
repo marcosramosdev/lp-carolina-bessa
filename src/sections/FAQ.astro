@@ -1,0 +1,70 @@
+---
+import { ChevronDown } from "@lucide/astro";
+import Eyebrow from "../components/Eyebrow.astro";
+
+const faqs = [
+  {
+    q: "Preciso saber qual tratamento quero fazer?",
+    a: "Não. Você pode contar o que sente, o que percebeu ou qual detalhe gostaria de melhorar. A indicação é discutida depois do exame.",
+  },
+  {
+    q: "Algum procedimento é realizado durante a avaliação?",
+    a: "A primeira consulta é voltada à conversa, ao exame clínico, solicitação de exames complementares, quando for preciso, e à orientação. Mas caso seja necessário, é possível iniciar o tratamento nesta mesma consulta.",
+  },
+  {
+    q: "Posso marcar uma consulta para avaliar implante?",
+    a: "Sim. A Dra. Carolina examina a região onde o dente foi perdido, verifica as condições da boca e avalia quais exames serão necessários. A indicação depende do resultado dessa análise.",
+  },
+  {
+    q: "A Dra. Carolina trabalha com próteses?",
+    a: "Sim. A profissional atua com planejamento reabilitador e avalia diferentes tipos de prótese conforme as necessidades clínicas.",
+  },
+  {
+    q: "Posso avaliar facetas em resina?",
+    a: "Sim. Durante a consulta, são observados o formato, a cor, a proporção dos dentes e a mordida. A saúde bucal e os limites do caso também entram nessa decisão.",
+  },
+  {
+    q: "O tratamento começa no mesmo dia?",
+    a: "Dependendo da urgência e indicação do tratamento, é possível iniciar no mesmo dia. Essa definição dependerá da avaliação e planejamento definidos.",
+  },
+  {
+    q: "Quanto custa a avaliação?",
+    a: "A equipe informa o valor pelo WhatsApp, junto com os horários disponíveis e as orientações para a consulta.",
+  },
+  {
+    q: "Onde fica o consultório?",
+    a: "No Kronos Empresarial, na Rua das Pernambucanas, 407, sala 1201, no bairro Graças, em Recife.",
+  },
+  {
+    q: "Como faço para agendar?",
+    a: "Toque em um dos botões da página. Você será direcionado ao WhatsApp da equipe.",
+  },
+];
+---
+
+<section class="bg-lavanda-50 py-24 lg:py-36">
+  <div class="mx-auto max-w-3xl px-6 lg:px-10" data-aos="fade-up">
+    <Eyebrow tone="lavanda">Perguntas frequentes</Eyebrow>
+    <h2 class="mt-5 text-h2 font-light text-tinta">
+      Questões comuns antes da avaliação
+    </h2>
+
+    <div class="mt-10 divide-y divide-lavanda-200">
+      {
+        faqs.map((faq) => (
+          <details class="group py-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-tinta [&::-webkit-details-marker]:hidden">
+              {faq.q}
+              <ChevronDown
+                size={20}
+                stroke-width={2}
+                class="shrink-0 text-lavanda-500 transition-transform duration-200 group-open:rotate-180"
+              />
+            </summary>
+            <p class="mt-3 text-sm text-tinta-soft">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

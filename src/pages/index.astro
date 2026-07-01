@@ -1,17 +1,49 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 
+import Hero from '../sections/Hero.astro';
+import FaixaConfianca from '../sections/FaixaConfianca.astro';
+import Identificacao from '../sections/Identificacao.astro';
+import Posicionamento from '../sections/Posicionamento.astro';
+import Reabilitacao from '../sections/Reabilitacao.astro';
+import Estetica from '../sections/Estetica.astro';
+import Avaliacao from '../sections/Avaliacao.astro';
+import ComoFunciona from '../sections/ComoFunciona.astro';
+import Diferenciais from '../sections/Diferenciais.astro';
+import Tratamentos from '../sections/Tratamentos.astro';
+import Duvidas from '../sections/Duvidas.astro';
+import AntesDepois from '../sections/AntesDepois.astro';
+import Depoimentos from '../sections/Depoimentos.astro';
+import SobreProfissional from '../sections/SobreProfissional.astro';
+import Localizacao from '../sections/Localizacao.astro';
+import FAQ from '../sections/FAQ.astro';
+import ConversaoFinal from '../sections/ConversaoFinal.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Header />
+  <main>
+    <Hero />
+    <FaixaConfianca />
+    <Identificacao />
+    <Posicionamento />
+    <Reabilitacao />
+    <Estetica />
+    <Avaliacao />
+    <ComoFunciona />
+    <Diferenciais />
+    <Tratamentos />
+    <Duvidas />
+    <AntesDepois />
+    <Depoimentos />
+    <SobreProfissional />
+    <Localizacao />
+    <FAQ />
+    <ConversaoFinal />
+  </main>
+  <Footer />
+  <WhatsAppFloat />
+</Layout>
