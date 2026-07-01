@@ -1,7 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
 import '../styles/global.css';
-import 'aos/dist/aos.css';
 import ogSource from '../assets/images/foto-perfil-1.jpeg';
 import { SITE_NAME, SITE_TITLE, SITE_DESCRIPTION, CLINIC, WHATSAPP_DISPLAY } from '../consts';
 
@@ -72,12 +71,19 @@ const jsonLd = {
   <body>
     <slot />
     <script>
-      import AOS from 'aos';
-      AOS.init({
-        duration: 700,
-        once: true,
-        offset: 80,
-      });
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      );
+
+      document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>

@@ -10,7 +10,7 @@ import { WA_MESSAGES, CLINIC, MAPS_SEARCH_URL, MAPS_EMBED_URL, SITE_NAME } from 
 <section id="localizacao" class="scroll-mt-24 bg-creme py-24 lg:py-36">
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
     <div class="grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-20">
-      <div data-aos="fade-up">
+      <div data-reveal>
         <Eyebrow tone="terracota">Localização</Eyebrow>
         <h2 class="mt-5 text-h2 font-light text-tinta">
           Atendimento no bairro das Graças, em Recife
@@ -54,8 +54,8 @@ import { WA_MESSAGES, CLINIC, MAPS_SEARCH_URL, MAPS_EMBED_URL, SITE_NAME } from 
 
       <div
         class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10"
-        data-aos="fade-up"
-        data-aos-delay="150"
+        data-reveal
+        style="transition-delay: 150ms"
       >
         <Image
           src={buildingPhoto}
@@ -68,7 +68,7 @@ import { WA_MESSAGES, CLINIC, MAPS_SEARCH_URL, MAPS_EMBED_URL, SITE_NAME } from 
       </div>
     </div>
 
-    <div class="mt-10 overflow-hidden rounded-2xl border border-salvia-100" data-aos="fade-up">
+    <div class="mt-10 overflow-hidden rounded-2xl border border-salvia-100" data-reveal>
       <iframe
         src={MAPS_EMBED_URL}
         title={`Mapa de localização — ${CLINIC.building}`}

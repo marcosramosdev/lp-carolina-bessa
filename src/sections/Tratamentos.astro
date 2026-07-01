@@ -6,14 +6,14 @@ import { TREATMENTS, WA_MESSAGES } from "../consts";
 
 <section id="tratamentos" class="scroll-mt-24 bg-creme py-24 lg:py-36">
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
-    <div class="max-w-2xl" data-aos="fade-up">
+    <div class="max-w-2xl" data-reveal>
       <Eyebrow tone="terracota">Tratamentos</Eyebrow>
       <h2 class="mt-5 text-h2 font-light text-tinta">
         Possibilidades avaliadas no consultório
       </h2>
     </div>
 
-    <ul class="mt-10 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="100">
+    <ul class="mt-10 flex flex-wrap gap-3" data-reveal style="transition-delay: 100ms">
       {
         TREATMENTS.map((treatment) => (
           <li class="rounded-full border border-salvia-200 bg-salvia-50/60 px-5 py-2.5 text-sm font-medium text-tinta">

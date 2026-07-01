@@ -16,7 +16,7 @@ const cases = [
 
 <section class="bg-salvia-50 py-24 lg:py-36">
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
-    <div class="max-w-2xl" data-aos="fade-up">
+    <div class="max-w-2xl" data-reveal>
       <Eyebrow tone="terracota">Antes e depois</Eyebrow>
       <h2 class="mt-5 text-h2 font-light text-tinta">
         Resultados construídos a partir do planejamento de cada caso
@@ -31,7 +31,7 @@ const cases = [
     <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {
         cases.map(({ image, caption }, index) => (
-          <div data-aos="fade-up" data-aos-delay={index * 100}>
+          <div data-reveal style={`transition-delay: ${index * 100}ms`}>
             <div class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10">
               <Image
                 src={image}

@@ -33,7 +33,7 @@ const objections = [
 
 <section id="duvidas" class="scroll-mt-24 bg-lavanda-50 py-24 lg:py-36">
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
-    <div class="max-w-2xl" data-aos="fade-up">
+    <div class="max-w-2xl" data-reveal>
       <Eyebrow tone="lavanda">Dúvidas antes de marcar</Eyebrow>
       <h2 class="mt-5 text-h2 font-light text-tinta">
         O que costuma preocupar antes da primeira consulta
@@ -45,8 +45,8 @@ const objections = [
         objections.map(({ quote, answer }, index) => (
           <div
             class="rounded-2xl bg-creme p-7"
-            data-aos="fade-up"
-            data-aos-delay={index * 80}
+            data-reveal
+            style={`transition-delay: ${index * 80}ms`}
           >
             <Quote size={22} stroke-width={1.5} class="text-lavanda-400" />
             <p class="mt-3 text-lg font-medium text-tinta">“{quote}”</p>
