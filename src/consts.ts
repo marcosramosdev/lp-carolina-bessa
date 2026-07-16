@@ -51,12 +51,14 @@ export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${CLINIC.lat},${CLI
 export const GOOGLE_REVIEWS_URL = MAPS_SEARCH_URL;
 
 export const NAV_LINKS = [
-  { label: "Avaliação", href: "#avaliacao" },
+  { label: "Consulta inicial", href: "#avaliacao" },
+  { label: "Posicionamento", href: "#posicionamento" },
+  { label: "Reabilitação oral", href: "#reabilitacao" },
+  { label: "Estética", href: "#estetica" },
   { label: "Tratamentos", href: "#tratamentos" },
-  { label: "Como funciona", href: "#como-funciona" },
-  { label: "Dra. Carolina", href: "#sobre" },
   { label: "Localização", href: "#localizacao" },
   { label: "Dúvidas", href: "#duvidas" },
+  { label: "Antes e depois", href: "#antes-e-depois" },
 ] as const;
 
 export const TREATMENTS = [

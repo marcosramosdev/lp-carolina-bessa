@@ -1,53 +1,61 @@
 ---
 import { Image } from "astro:assets";
-import atendimentoPhoto from "../assets/images/foto-atendimento-2.jpg";
+import posicionamentoPhoto from "../assets/images/POSICIONAMENTO.png";
 import Eyebrow from "../components/Eyebrow.astro";
 ---
 
-<section class="bg-lavanda-50 py-24 lg:py-36">
+<section id="posicionamento" class="scroll-mt-24 bg-lavanda-50 py-24 lg:py-36">
   <div
-    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_320px] lg:items-start lg:gap-20 lg:px-10"
+    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_320px] lg:items-center lg:gap-20 lg:px-10"
   >
-    <div class="max-w-2xl" data-reveal>
+    <div class="max-w-2xl">
       <Eyebrow tone="lavanda">Nosso posicionamento</Eyebrow>
 
       <h2 class="mt-5 text-h2 font-light text-tinta">
-        Antes de falar em implante, prótese ou faceta, é preciso olhar a boca toda
+        Antes de pensar em implante, prótese ou faceta, é preciso entender você
       </h2>
 
       <div class="mt-8 space-y-5 text-tinta-soft">
         <p>
-          Um dente influencia o outro. A forma como você mastiga também pode afetar
-          restaurações, próteses, gengiva e o encaixe da mordida.
-        </p>
-        <p>
-          Durante a avaliação, a Dra. Carolina procura entender o que está incomodando,
-          examina as condições da boca e conversa sobre o resultado que você espera.
-        </p>
-        <p>
-          Com essas informações, fica mais fácil discutir quais possibilidades combinam com
-          o seu caso, que exames podem ser necessários e quais podem ser as opções de
+          Na odontologia reabilitadora, nenhum dente é analisado isoladamente. A mastigação,
+          a mordida, a saúde dos tecidos, a estética do sorriso e até pequenos desgastes
+          fazem parte de um mesmo sistema, e cada detalhe influencia o resultado do
           tratamento.
+        </p>
+        <p>
+          Por isso, as consultas sempre funcionam como momentos de escuta e avaliação
+          cuidadosa. A Dra. Carolina busca compreender o que motivou você a procurar
+          atendimento, quais são suas expectativas e como elas podem ser harmonizadas para
+          alcançar um resultado saudável, natural e duradouro.
+        </p>
+        <p>
+          Mais do que indicar tratamentos, o objetivo é compreender as causas, identificar
+          as melhores possibilidades e construir um plano de cuidado pensado exclusivamente
+          para você.
+        </p>
+        <p>
+          A partir dessa análise, são apresentadas as possibilidades de tratamento de forma
+          clara e personalizada, para que cada decisão seja tomada com segurança e
+          confiança.
         </p>
       </div>
 
       <blockquote
         class="mt-8 border-l-4 border-lavanda-400 pl-6 text-lg italic text-tinta"
-        data-reveal
       >
-        Você não precisa chegar à consulta sabendo qual procedimento fazer. Pode contar
-        apenas o que sente, o que percebeu ou o que gostaria de mudar.
+        Você não precisa chegar ao consultório sabendo qual procedimento deseja fazer.
+        Basta trazer suas dúvidas, incômodos ou objetivos. O restante é construído juntos,
+        com acolhimento, planejamento e cuidado em cada etapa.
       </blockquote>
     </div>
 
     <div
       class="overflow-hidden rounded-2xl shadow-lg shadow-lavanda-900/10"
-      data-reveal
     >
       <Image
-        src={atendimentoPhoto}
-        alt="Dra. Carolina Bessa conversando com uma paciente, ambas sorrindo"
-        widths={[320, 480, 640]}
+        src={posicionamentoPhoto}
+        alt="Dra. Carolina Bessa em atendimento, ouvindo a paciente com atenção"
+        widths={[320, 480]}
         sizes="(min-width: 1024px) 320px, 90vw"
         loading="lazy"
         class="aspect-[4/5] w-full object-cover"

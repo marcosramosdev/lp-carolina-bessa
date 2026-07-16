@@ -1,47 +1,46 @@
 ---
-import Eyebrow from "../components/Eyebrow.astro";
-import WhatsAppButton from "../components/WhatsAppButton.astro";
-import { WA_MESSAGES } from "../consts";
+import Eyebrow from '../components/Eyebrow.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { WA_MESSAGES } from '../consts';
 
 const steps = [
   {
-    title: "Contato pelo WhatsApp",
-    text: "Você conta brevemente o motivo da procura. A equipe informa os horários disponíveis, o valor da avaliação e as orientações iniciais.",
+    title: 'Contato pelo WhatsApp',
+    text: 'Você conta brevemente o motivo da procura. A equipe informa os horários disponíveis, o valor da consulta e as orientações iniciais.',
   },
   {
-    title: "Consulta com a Dra. Carolina",
-    text: "A profissional escuta suas queixas, pergunta sobre seu histórico e realiza o exame clínico.",
+    title: 'Consulta com a Dra. Carolina',
+    text: 'A profissional escuta suas queixas, pergunta sobre seu histórico e realiza o exame clínico.',
   },
   {
-    title: "Exames, quando necessários",
-    text: "Alguns casos precisam de radiografias, fotografias ou outros exames antes da definição da conduta.",
+    title: 'Exames, quando necessários',
+    text: 'Alguns casos precisam de radiografias, fotografias ou outros exames antes da definição da conduta.',
   },
   {
-    title: "Explicação do caso",
-    text: "Você recebe uma orientação sobre o que foi observado e quais possibilidades podem ser consideradas.",
+    title: 'Explicação do caso',
+    text: 'Você recebe uma orientação sobre o que foi observado e quais possibilidades podem ser consideradas.',
   },
   {
-    title: "Organização do tratamento",
-    text: "Quando existe indicação, as etapas são planejadas conforme as suas condições e as prioridades definidas na consulta.",
+    title: 'Organização do tratamento',
+    text: 'Quando existe indicação, as etapas são planejadas conforme as suas condições e as prioridades definidas na consulta.',
   },
 ];
 ---
 
 <section id="como-funciona" class="scroll-mt-24 bg-creme py-24 lg:py-36">
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
-    <div class="max-w-2xl" data-reveal>
+    <div class="max-w-2xl">
       <Eyebrow tone="terracota">Como funciona o atendimento</Eyebrow>
-      <h2 class="mt-5 text-h2 font-light text-tinta">Da primeira mensagem ao planejamento</h2>
+      <h2 class="mt-5 text-h2 font-light text-tinta">
+        Da primeira mensagem ao planejamento
+      </h2>
     </div>
 
     <!-- Mobile / tablet: cards empilhados, sem linha de conexão -->
     <ol class="mt-14 grid gap-5 lg:hidden">
       {
         steps.map((step, index) => (
-          <li
-            class="flex gap-5 rounded-2xl border border-terracota-100 bg-terracota-50/40 p-6"
-            data-reveal
-          >
+          <li class="flex gap-5 rounded-2xl border border-terracota-100 bg-terracota-50/40 p-6">
             <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-terracota-500 text-lg font-semibold text-creme">
               {index + 1}
             </span>
@@ -56,23 +55,30 @@ const steps = [
 
     <!-- Desktop: stepper horizontal -->
     <ol class="relative mt-20 hidden lg:grid lg:grid-cols-5 lg:gap-8">
-      <div aria-hidden="true" class="absolute left-[10%] right-[10%] top-7 h-px bg-terracota-200"></div>
+      <div
+        aria-hidden="true"
+        class="absolute left-[10%] right-[10%] top-7 h-px bg-terracota-200"
+      >
+      </div>
       {
         steps.map((step, index) => (
-          <li
-            class="relative flex flex-col items-center text-center"
-            data-reveal
-          >
+          <li class="relative flex flex-col items-center text-center">
             <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-terracota-500 text-xl font-semibold text-creme ring-8 ring-creme">
               {index + 1}
             </span>
             <h3 class="mt-6 font-semibold text-tinta">{step.title}</h3>
-            <p class="mx-auto mt-3 max-w-[220px] text-sm text-tinta-soft">{step.text}</p>
+            <p class="mx-auto mt-3 max-w-[220px] text-sm text-tinta-soft">
+              {step.text}
+            </p>
           </li>
         ))
       }
     </ol>
 
-    <WhatsAppButton message={WA_MESSAGES.geral} label="Agendar minha avaliação" class="mt-16" />
+    <WhatsAppButton
+      message={WA_MESSAGES.geral}
+      label="Agendar minha consulta"
+      class="mt-16"
+    />
   </div>
 </section>

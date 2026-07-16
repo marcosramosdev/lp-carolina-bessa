@@ -1,5 +1,5 @@
 ---
-import { UserCheck, Layers, Lightbulb, Leaf, PackageCheck, Clock } from "@lucide/astro";
+import { UserCheck, Layers, Lightbulb, Leaf, PackageCheck, HeartHandshake } from "@lucide/astro";
 import Eyebrow from "../components/Eyebrow.astro";
 
 const items = [
@@ -11,7 +11,7 @@ const items = [
   {
     icon: Layers,
     title: "Visão estética e reabilitadora",
-    text: "A aparência do sorriso é analisada junto com a mastigação, a mordida e a saúde bucal.",
+    text: "A aparência do sorriso é analisada junto com os hábitos funcionais, a forma da mordida e a saúde bucal.",
   },
   {
     icon: Lightbulb,
@@ -29,16 +29,16 @@ const items = [
     text: "A seleção considera o tipo de procedimento, as condições clínicas e as necessidades do planejamento.",
   },
   {
-    icon: Clock,
-    title: "Tempo para pensar",
-    text: "Você recebe as informações da avaliação e pode analisar os próximos passos antes de iniciar um tratamento.",
+    icon: HeartHandshake,
+    title: "Responsabilidade e ética profissional",
+    text: "Cada paciente é único. O tratamento respeita sua individualidade e parte das suas queixas e necessidades, sem ditar padrões.",
   },
 ];
 ---
 
 <section class="bg-salvia-50 py-24 lg:py-36">
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
-    <div class="max-w-2xl" data-reveal>
+    <div class="max-w-2xl">
       <Eyebrow tone="salvia">Diferenciais</Eyebrow>
       <h2 class="mt-5 text-h2 font-light text-tinta">
         Informação suficiente para você decidir com segurança
@@ -48,7 +48,7 @@ const items = [
     <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
       {
         items.map(({ icon: Icon, title, text }, index) => (
-          <div data-reveal>
+          <div>
             <Icon size={26} stroke-width={1.5} class="text-salvia-600" />
             <h3 class="mt-4 font-semibold text-tinta">{title}</h3>
             <p class="mt-2 text-sm text-tinta-soft">{text}</p>

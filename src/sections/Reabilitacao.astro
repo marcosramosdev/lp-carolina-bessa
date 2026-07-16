@@ -7,21 +7,20 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
 import { WA_MESSAGES } from "../consts";
 
 const observations = [
-  "Onde o dente foi perdido",
-  "Como estão os dentes vizinhos e a gengiva",
-  "A condição das próteses e restaurações existentes",
-  "O encaixe da mordida",
-  "Como a mastigação está distribuída",
-  "Quais exames podem ser necessários",
-  "O que mais incomoda você hoje",
+  "A saúde dos dentes, da gengiva e dos tecidos de suporte",
+  "A condição de próteses e restaurações existentes",
+  "O encaixe da mordida e o equilíbrio das forças mastigatórias",
+  "A presença de desgastes, perdas dentárias ou sobrecargas",
+  "A necessidade de exames complementares",
+  "Suas queixas, expectativas e objetivos",
 ];
 ---
 
-<section class="bg-creme py-24 lg:py-36">
+<section id="reabilitacao" class="scroll-mt-24 bg-creme py-24 lg:py-36">
   <div
-    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[380px_1fr] lg:items-start lg:gap-20 lg:px-10"
+    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[380px_1fr] lg:items-center lg:gap-20 lg:px-10"
   >
-    <div class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10" data-reveal>
+    <div class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10">
       <Image
         src={atendimentoPhoto}
         alt="Dra. Carolina Bessa realizando procedimento odontológico em consultório"
@@ -32,25 +31,31 @@ const observations = [
       />
     </div>
 
-    <div data-reveal>
+    <div>
       <Eyebrow tone="salvia">Reabilitação oral</Eyebrow>
 
       <h2 class="mt-5 text-h2 font-light text-tinta">
-        Quando mastigar começa a exigir atenção demais
+        Nem sempre o problema é apenas um dente
       </h2>
 
       <div class="mt-8 space-y-5 text-tinta-soft">
         <p>
-          Você escolhe o lado da boca. Evita uma carne mais firme. Sente a prótese mexer.
-          Percebe que a mordida já não encaixa como antes.
+          Você percebe que evita sorrir em algumas situações. Que já se acostumou a mastigar
+          de um lado. Que sente um desconforto ao acordar, uma dor que aparece de vez em
+          quando ou a sensação de que sua mordida já não é a mesma.
         </p>
         <p>
-          Esses incômodos podem aparecer após a perda de um dente, com o desgaste de uma
-          prótese antiga ou quando há alterações em diferentes regiões da boca.
+          Muitas pessoas convivem com esses sinais por anos, acreditando que fazem parte da
+          rotina. Mas, quando um dente é perdido, desgastado ou deixa de exercer sua função
+          adequadamente, toda a boca precisa se adaptar, e essas mudanças podem afetar o
+          conforto, a estabilidade e a saúde do sorriso ao longo do tempo.
         </p>
       </div>
 
-      <h3 class="mt-8 font-semibold text-tinta">Na avaliação reabilitadora, a Dra. Carolina observa:</h3>
+      <h3 class="mt-8 font-semibold text-tinta">
+        Durante a consulta, a Dra. Carolina realiza uma avaliação cuidadosa para compreender
+        como toda a boca está funcionando. São analisados:
+      </h3>
       <ul class="mt-4 grid gap-3 sm:grid-cols-2">
         {
           observations.map((item) => (
@@ -63,18 +68,18 @@ const observations = [
       </ul>
 
       <p class="mt-6 text-tinta-soft">
-        Conforme as condições encontradas, podem ser consideradas próteses, implantes,
-        coroas, restaurações ou um planejamento que envolva mais de uma etapa.
+        Conforme as condições encontradas, podem ser considerados o uso de próteses, coroas,
+        implantes, restaurações ou um planejamento que envolva mais de uma etapa.
       </p>
 
-      <p class="mt-4 text-sm italic text-tinta-soft/80">
-        A falta de um dente, sozinha, não confirma a indicação do tratamento. É necessário
-        examinar a região e avaliar as condições clínicas.
+      <p class="mt-4 text-tinta-soft">
+        Mais do que substituir um dente, a reabilitação oral busca devolver conforto,
+        equilíbrio e a tranquilidade de voltar a sorrir com segurança e confiança.
       </p>
 
       <WhatsAppButton
         message={WA_MESSAGES.reabilitacao}
-        label="Agendar avaliação de reabilitação"
+        label="Agendar consulta de reabilitação"
         class="mt-8"
       />
     </div>

@@ -1,46 +1,56 @@
 ---
 import { Image } from "astro:assets";
 import { Sparkles } from "@lucide/astro";
-import consultorioPhoto from "../assets/images/foto-consultorio-3.jpeg";
+import estetica1 from "../assets/images/5.png";
+import estetica2 from "../assets/images/35.png";
+import estetica3 from "../assets/images/34.png";
+import estetica4 from "../assets/images/51.png";
 import Eyebrow from "../components/Eyebrow.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 import { WA_MESSAGES } from "../consts";
 
 const considerations = [
-  "O formato e a proporção dos dentes",
-  "Como o sorriso aparece no rosto",
-  "A cor e as características naturais",
-  "O encaixe da mordida",
-  "A saúde dos dentes e da gengiva",
-  "O resultado que você espera",
-  "Os limites clínicos do tratamento",
+  "O formato, a proporção e a posição dos dentes",
+  "A harmonia entre o sorriso, a gengiva, os lábios e a face",
+  "A cor e as características naturais dos dentes",
+  "A saúde da gengiva e das estruturas de suporte",
+  "O encaixe da mordida e a função do sorriso",
+  "Suas expectativas e os limites biológicos de cada tratamento",
+];
+
+const photos = [
+  { src: estetica1, alt: "Antes e depois de tratamento estético dental — caso 1" },
+  { src: estetica2, alt: "Antes e depois de tratamento estético dental — caso 2" },
+  { src: estetica3, alt: "Antes e depois de tratamento estético dental — caso 3" },
+  { src: estetica4, alt: "Antes e depois de tratamento estético dental — caso 4" },
 ];
 ---
 
-<section class="bg-salvia-50 py-24 lg:py-36">
+<section id="estetica" class="scroll-mt-24 bg-salvia-50 py-24 lg:py-36">
   <div
-    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_380px] lg:items-start lg:gap-20 lg:px-10"
+    class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_380px] lg:items-center lg:gap-20 lg:px-10"
   >
-    <div data-reveal>
+    <div>
       <Eyebrow tone="terracota">Estética dental</Eyebrow>
 
       <h2 class="mt-5 text-h2 font-light text-tinta">
-        Melhorar o sorriso sem deixar os dentes com aspecto artificial
+        Às vezes, o que incomoda não é o sorriso inteiro. É um detalhe que faz diferença
       </h2>
 
       <div class="mt-8 space-y-5 text-tinta-soft">
         <p>
-          Talvez você queira corrigir um formato que incomoda, suavizar diferenças de
-          tamanho ou avaliar uma mudança de cor.
+          Pode ser um dente escurecido, um pequeno desgaste, um espaço entre os dentes ou um
+          formato que nunca pareceu combinar com você. São detalhes que, muitas vezes,
+          passam despercebidos pelos outros, mas que fazem você sorrir com menos liberdade.
         </p>
         <p>
-          Antes de indicar facetas em resina ou qualquer outro procedimento estético, a Dra.
-          Carolina examina a saúde dos dentes, da gengiva e da mordida. Também observa as
-          características que já fazem parte do seu sorriso.
+          Na odontologia estética, cada sorriso tem sua própria identidade. Por isso, antes
+          de indicar qualquer procedimento, a Dra. Carolina procura compreender o que
+          realmente incomoda você e quais resultados fazem sentido para a sua realidade.
         </p>
       </div>
 
-      <h3 class="mt-8 font-semibold text-tinta">O planejamento pode considerar:</h3>
+      <h3 class="mt-8 font-semibold text-tinta">Durante a consulta, são avaliados:</h3>
       <ul class="mt-4 grid gap-3 sm:grid-cols-2">
         {
           considerations.map((item) => (
@@ -53,8 +63,16 @@ const considerations = [
       </ul>
 
       <p class="mt-6 text-tinta-soft">
-        A proposta é encontrar uma solução compatível com a sua boca, sem copiar um modelo
-        de sorriso que talvez nem combine com você.
+        A partir dessa análise, é desenvolvido um planejamento personalizado, que pode
+        incluir clareamento dental, reanatomizações em resina, gengivoplastia, facetas ou
+        outras abordagens, sempre respeitando a saúde, a função e a naturalidade do sorriso.
+      </p>
+
+      <p class="mt-4 text-tinta-soft">
+        Um sorriso bonito não chama atenção por parecer perfeito, chama atenção porque
+        parece naturalmente seu. Esse é o princípio que orienta cada planejamento: valorizar
+        sua identidade e realçar a beleza do seu sorriso com resultados elegantes, naturais
+        e duradouros.
       </p>
 
       <WhatsAppButton
@@ -64,18 +82,21 @@ const considerations = [
       />
     </div>
 
-    <div
-      class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10"
-      data-reveal
-    >
-      <Image
-        src={consultorioPhoto}
-        alt="Sala de consulta moderna da Dra. Carolina Bessa, com poltronas verdes"
-        widths={[380, 560, 760]}
-        sizes="(min-width: 1024px) 380px, 90vw"
-        loading="lazy"
-        class="aspect-[4/5] w-full object-cover"
-      />
+    <div class="grid grid-cols-2 gap-4">
+      {
+        photos.map(({ src, alt }) => (
+          <div class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10">
+            <Image
+              src={src}
+              alt={alt}
+              widths={[240, 380, 560]}
+              sizes="(min-width: 1024px) 182px, 45vw"
+              loading="lazy"
+              class="aspect-[4/5] w-full object-cover"
+            />
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

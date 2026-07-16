@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { ChevronDown } from "@lucide/astro";
-import heroPortrait from "../assets/images/foto-perfil-1.jpeg";
+import heroPortrait from "../assets/images/IMG_0296.jpg";
 import Eyebrow from "../components/Eyebrow.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 import SmileArc from "../components/SmileArc.astro";
@@ -23,31 +23,46 @@ import { WA_MESSAGES } from "../consts";
   <div
     class="relative mx-auto grid w-full max-w-7xl gap-12 px-6 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:px-10 lg:py-8"
   >
-    <div class="max-w-xl" data-reveal>
+    <div class="max-w-xl">
       <Eyebrow tone="salvia">Odontologia estética e reabilitadora · Graças, Recife</Eyebrow>
 
       <h1 class="mt-5 text-display font-light text-tinta">
-        Voltar a mastigar com conforto. E com a segurança de um sorriso natural.
+        Planejamento, acolhimento e confiança. Um novo olhar para seu sorriso.
       </h1>
 
       <p class="mt-6 text-lg text-tinta-soft">
-        Se você perdeu um dente, usa uma prótese que incomoda ou quer melhorar o formato e a
-        cor dos dentes, a avaliação com a Dra. Carolina Bessa ajuda a entender o que pode
-        fazer sentido para o seu caso.
+        Se você perdeu um dente, usa uma prótese que incomoda, quer melhorar o formato e a
+        cor dos dentes ou simplesmente sente que precisa cuidar do sorriso mas não sabe por
+        onde começar? A Dra. Carolina Bessa te ajuda a entender o que pode fazer sentido
+        para o seu caso.
       </p>
 
       <p class="mt-4 text-lg text-tinta-soft">
-        Na consulta é avaliada sua saúde bucal, o equilíbrio da mordida e tudo isso é
-        alinhado com o que você espera do tratamento.
+        Já na consulta inicial é possível avaliar sua saúde bucal, o equilíbrio da mordida,
+        suas queixas e expectativas e, a partir disso, planejar o que faz sentido para que
+        você tenha a segurança de dar o primeiro passo no cuidado com o seu sorriso.
       </p>
 
+      <p class="mt-4 text-lg text-tinta-soft">
+        Um tratamento individualizado, num ambiente acolhedor, que respeite saúde, estética
+        e função.
+      </p>
+
+      <blockquote class="mt-6 border-l-4 border-terracota-400 pl-5 text-lg italic text-tinta">
+        “Mais do que tratar dentes, acredito em compreender pessoas para construir sorrisos
+        saudáveis, funcionais e naturais.”
+        <cite class="mt-2 block text-sm font-medium not-italic text-tinta-soft">
+          — Dra. Carolina Bessa
+        </cite>
+      </blockquote>
+
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <WhatsAppButton message={WA_MESSAGES.geral} label="Agendar avaliação pelo WhatsApp" />
+        <WhatsAppButton message={WA_MESSAGES.geral} label="Agendar consulta pelo WhatsApp" />
         <a
-          href="#como-funciona"
+          href="#avaliacao"
           class="inline-flex items-center self-center text-sm font-semibold text-salvia-700 underline-offset-4 hover:text-salvia-800 hover:underline"
         >
-          Ver como funciona a avaliação
+          Ver como funciona a consulta inicial
         </a>
       </div>
 
@@ -78,9 +93,9 @@ import { WA_MESSAGES } from "../consts";
   </div>
 
   <a
-    href="#faixa-confianca"
+    href="#posicionamento"
     aria-label="Rolar para continuar"
-    class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-bounce text-salvia-500 hover:text-salvia-700 lg:block"
+    class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-salvia-500 hover:text-salvia-700 lg:block"
   >
     <ChevronDown size={28} stroke-width={1.5} />
   </a>
