@@ -1,14 +1,16 @@
 ---
-import { Image } from "astro:assets";
-import { ChevronDown } from "@lucide/astro";
-import heroPortrait from "../assets/images/IMG_0296.jpg";
-import Eyebrow from "../components/Eyebrow.astro";
-import WhatsAppButton from "../components/WhatsAppButton.astro";
-import SmileArc from "../components/SmileArc.astro";
-import { WA_MESSAGES } from "../consts";
+import { Image } from 'astro:assets';
+import { ChevronDown } from '@lucide/astro';
+import heroPortrait from '../assets/images/IMG_0296.jpg';
+import Eyebrow from '../components/Eyebrow.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import SmileArc from '../components/SmileArc.astro';
+import { WA_MESSAGES } from '../consts';
 ---
 
-<section class="relative overflow-hidden bg-creme lg:flex lg:min-h-[calc(100vh-var(--header-h))] lg:items-center">
+<section
+  class="relative overflow-hidden bg-creme lg:flex lg:min-h-[calc(100vh-var(--header-h))] lg:items-center"
+>
   <div
     aria-hidden="true"
     class="pointer-events-none absolute -right-40 -top-32 h-96 w-96 rounded-full bg-lavanda-100 blur-3xl"
@@ -24,40 +26,42 @@ import { WA_MESSAGES } from "../consts";
     class="relative mx-auto grid w-full max-w-7xl gap-12 px-6 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:px-10 lg:py-8"
   >
     <div class="max-w-xl">
-      <Eyebrow tone="salvia">Odontologia estética e reabilitadora · Graças, Recife</Eyebrow>
+      <Eyebrow tone="salvia"
+        >Odontologia estética e reabilitadora · Graças, Recife</Eyebrow
+      >
 
       <h1 class="mt-5 text-display font-light text-tinta">
-        Planejamento, acolhimento e confiança. Um novo olhar para seu sorriso.
+        Planejamento, acolhimento e confiança para recuperar a saúde, a função e
+        a naturalidade do seu sorriso.
       </h1>
 
       <p class="mt-6 text-lg text-tinta-soft">
-        Se você perdeu um dente, usa uma prótese que incomoda, quer melhorar o formato e a
-        cor dos dentes ou simplesmente sente que precisa cuidar do sorriso mas não sabe por
-        onde começar? A Dra. Carolina Bessa te ajuda a entender o que pode fazer sentido
-        para o seu caso.
+        Se você perdeu um dente, convive com uma prótese desconfortável ou
+        deseja melhorar a aparência do sorriso, o primeiro passo é entender o
+        que realmente faz sentido para o seu caso.
       </p>
 
       <p class="mt-4 text-lg text-tinta-soft">
-        Já na consulta inicial é possível avaliar sua saúde bucal, o equilíbrio da mordida,
-        suas queixas e expectativas e, a partir disso, planejar o que faz sentido para que
-        você tenha a segurança de dar o primeiro passo no cuidado com o seu sorriso.
+        Na consulta inicial, a Dra. Carolina Bessa avalia sua saúde bucal,
+        mordida, queixas e expectativas para construir um plano de tratamento
+        individualizado, respeitando saúde, estética e função.
       </p>
 
-      <p class="mt-4 text-lg text-tinta-soft">
-        Um tratamento individualizado, num ambiente acolhedor, que respeite saúde, estética
-        e função.
-      </p>
-
-      <blockquote class="mt-6 border-l-4 border-terracota-400 pl-5 text-lg italic text-tinta">
-        “Mais do que tratar dentes, acredito em compreender pessoas para construir sorrisos
-        saudáveis, funcionais e naturais.”
+      <blockquote
+        class="mt-6 border-l-4 border-terracota-400 pl-5 text-lg italic text-tinta"
+      >
+        “Mais do que tratar dentes, acredito em compreender pessoas para
+        construir sorrisos saudáveis, funcionais e naturais.”
         <cite class="mt-2 block text-sm font-medium not-italic text-tinta-soft">
           — Dra. Carolina Bessa
         </cite>
       </blockquote>
 
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <WhatsAppButton message={WA_MESSAGES.geral} label="Agendar consulta pelo WhatsApp" />
+        <WhatsAppButton
+          message={WA_MESSAGES.geral}
+          label="Conversar pelo WhatsApp"
+        />
         <a
           href="#avaliacao"
           class="inline-flex items-center self-center text-sm font-semibold text-salvia-700 underline-offset-4 hover:text-salvia-800 hover:underline"
@@ -88,7 +92,10 @@ import { WA_MESSAGES } from "../consts";
           class="aspect-[3/4] w-full object-cover"
         />
       </div>
-      <SmileArc tone="terracota" class="absolute -bottom-8 left-1/2 w-36 -translate-x-1/2" />
+      <SmileArc
+        tone="terracota"
+        class="absolute -bottom-8 left-1/2 w-36 -translate-x-1/2"
+      />
     </div>
   </div>
 
