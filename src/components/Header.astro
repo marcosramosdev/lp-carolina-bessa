@@ -16,7 +16,13 @@ import { NAV_LINKS, WA_MESSAGES } from '../consts';
       href="#"
       class="shrink-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
     >
-      <Image src={logo} alt="Dra. Carolina Bessa | Odontologia" width={280} />
+      <Image
+        src={logo}
+        alt="Dra. Carolina Bessa | Odontologia"
+        width={200}
+        densities={[2, 3]}
+        class="h-auto w-40 sm:w-48"
+      />
     </a>
 
     <div class="flex items-center gap-3 sm:gap-4">
@@ -66,7 +72,9 @@ import { NAV_LINKS, WA_MESSAGES } from '../consts';
 </header>
 
 <script>
-  const menu = document.getElementById('header-menu') as HTMLDetailsElement | null;
+  const menu = document.getElementById(
+    'header-menu',
+  ) as HTMLDetailsElement | null;
 
   if (menu) {
     // Fecha ao clicar em um link do menu
