@@ -1,38 +1,56 @@
 ---
-import { Image } from "astro:assets";
-import { ChevronLeft, ChevronRight } from "@lucide/astro";
-import caso1 from "../assets/images/1.png";
-import caso4 from "../assets/images/4(1).png";
-import caso33 from "../assets/images/33.png";
-import caso34 from "../assets/images/34.png";
-import caso41 from "../assets/images/41.png";
-import caso40 from "../assets/images/40.png";
-import caso44 from "../assets/images/44.png";
-import caso48 from "../assets/images/48.png";
-import caso50 from "../assets/images/50.png";
-import caso51 from "../assets/images/51.png";
-import Eyebrow from "../components/Eyebrow.astro";
-import WhatsAppButton from "../components/WhatsAppButton.astro";
-import { WA_MESSAGES } from "../consts";
+import { Image } from 'astro:assets';
+import { ChevronLeft, ChevronRight } from '@lucide/astro';
+import caso1 from '../assets/images/1.png';
+import caso4 from '../assets/images/4(1).png';
+import caso33 from '../assets/images/33.png';
+import caso34 from '../assets/images/34.png';
+import caso41 from '../assets/images/41.png';
+import caso40 from '../assets/images/40.png';
+import caso44 from '../assets/images/44.png';
+import caso48 from '../assets/images/48.png';
+import caso50 from '../assets/images/50.png';
+import caso51 from '../assets/images/51.png';
+import antesDepois1 from '../assets/images/antes-depois-1.jpg';
+import antesDepois2 from '../assets/images/antes-depois-2.jpg';
+import antesDepois3 from '../assets/images/antes-depois-3.jpg';
+import Eyebrow from '../components/Eyebrow.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { WA_MESSAGES } from '../consts';
 
 const cases = [
-  { image: caso1, caption: "Gengivoplastia e reanatomização" },
-  { image: caso4, caption: "Queixa inicial: sorriso infantil" },
-  { image: caso33, caption: "Alteração de forma e cor com laminados cerâmicos" },
-  { image: caso34, caption: "Fechamento de diastemas e reanatomização" },
-  { image: caso41, caption: "Ajuste estético e funcional" },
-  { image: caso40, caption: "Troca de prótese total removível" },
-  { image: caso44, caption: "Alinhamento e reanatomização estética" },
+  {
+    image: antesDepois1,
+    caption: 'Reanatomização para harmonia das proporções dentárias',
+  },
+  {
+    image: antesDepois2,
+    caption: 'Correção da linha do sorriso com laminados cerâmicos',
+  },
+  {
+    image: antesDepois3,
+    caption: 'Uniformização de forma e cor com laminados cerâmicos',
+  },
+  { image: caso1, caption: 'Gengivoplastia e reanatomização' },
+  { image: caso4, caption: 'Queixa inicial: sorriso infantil' },
+  {
+    image: caso33,
+    caption: 'Alteração de forma e cor com laminados cerâmicos',
+  },
+  { image: caso34, caption: 'Fechamento de diastemas e reanatomização' },
+  { image: caso41, caption: 'Ajuste estético e funcional' },
+  { image: caso40, caption: 'Troca de prótese total removível' },
+  { image: caso44, caption: 'Alinhamento e reanatomização estética' },
   {
     image: caso48,
-    caption: "Devolvendo segurança para sorrir com coroas em zircônia",
+    caption: 'Devolvendo segurança para sorrir com coroas em zircônia',
   },
   {
     image: caso50,
     caption:
-      "Queixa inicial: dentes não apareciam ao sorrir. Aspecto final: dentes mais alongados, iluminados e alinhados (rejuvenescimento do sorriso)",
+      'Queixa inicial: dentes não apareciam ao sorrir. Aspecto final: dentes mais alongados, iluminados e alinhados (rejuvenescimento do sorriso)',
   },
-  { image: caso51, caption: "Ajuste de cor em dente escurecido" },
+  { image: caso51, caption: 'Ajuste de cor em dente escurecido' },
 ];
 ---
 
@@ -44,9 +62,9 @@ const cases = [
         Resultados construídos a partir do planejamento de cada caso
       </h2>
       <p class="mt-6 text-tinta-soft">
-        As imagens abaixo mostram casos reais acompanhados pela Dra. Carolina Bessa. Cada
-        resultado partiu de uma avaliação individual, considerando a saúde bucal, a função
-        e as características naturais do sorriso.
+        As imagens abaixo mostram casos reais acompanhados pela Dra. Carolina
+        Bessa. Cada resultado partiu de uma avaliação individual, considerando a
+        saúde bucal, a função e as características naturais do sorriso.
       </p>
     </div>
 
@@ -94,8 +112,8 @@ const cases = [
     </div>
 
     <p class="mt-8 max-w-2xl text-sm italic text-tinta-soft/80">
-      Os resultados apresentados refletem casos específicos. Cada tratamento depende do
-      diagnóstico e das condições clínicas do paciente.
+      Os resultados apresentados refletem casos específicos. Cada tratamento
+      depende do diagnóstico e das condições clínicas do paciente.
     </p>
 
     <WhatsAppButton
@@ -118,26 +136,30 @@ const cases = [
 
 <script>
   function setupCarousel() {
-    const track = document.getElementById("antes-depois-track");
+    const track = document.getElementById('antes-depois-track');
     if (!track) return;
 
-    const section = track.closest("section");
-    const prev = section?.querySelector<HTMLButtonElement>("[data-carousel-prev]");
-    const next = section?.querySelector<HTMLButtonElement>("[data-carousel-next]");
+    const section = track.closest('section');
+    const prev = section?.querySelector<HTMLButtonElement>(
+      '[data-carousel-prev]',
+    );
+    const next = section?.querySelector<HTMLButtonElement>(
+      '[data-carousel-next]',
+    );
     if (!prev || !next) return;
 
     const slideStep = () => {
-      const slide = track.querySelector("li");
+      const slide = track.querySelector('li');
       if (!slide) return track.clientWidth;
       const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
       return slide.getBoundingClientRect().width + gap;
     };
 
-    prev.addEventListener("click", () => {
-      track.scrollBy({ left: -slideStep(), behavior: "smooth" });
+    prev.addEventListener('click', () => {
+      track.scrollBy({ left: -slideStep(), behavior: 'smooth' });
     });
-    next.addEventListener("click", () => {
-      track.scrollBy({ left: slideStep(), behavior: "smooth" });
+    next.addEventListener('click', () => {
+      track.scrollBy({ left: slideStep(), behavior: 'smooth' });
     });
 
     const updateButtons = () => {
@@ -146,8 +168,8 @@ const cases = [
       next.disabled = track.scrollLeft >= maxScroll;
     };
 
-    track.addEventListener("scroll", updateButtons, { passive: true });
-    window.addEventListener("resize", updateButtons);
+    track.addEventListener('scroll', updateButtons, { passive: true });
+    window.addEventListener('resize', updateButtons);
     updateButtons();
   }
 
