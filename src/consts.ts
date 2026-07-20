@@ -68,8 +68,12 @@ export const TREATMENTS = [
   "Implantes dentários",
   "Próteses dentárias",
   "Coroas",
-  "Restaurações estéticas",
+  "Restaurações",
   "Clareamento dental",
   "Prevenção e acompanhamento da saúde bucal",
   "Planejamento funcional e estético do sorriso",
+  "Tratamento endodôntico (canal)",
+  "Exodontia",
+  "Laminados cerâmicos",
+  "Raspagem e profilaxia (limpeza)",
 ] as const;

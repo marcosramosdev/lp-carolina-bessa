@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { Sparkles } from "@lucide/astro";
+import { Sparkles, X } from "@lucide/astro";
 import estetica1 from "../assets/images/5.png";
 import estetica2 from "../assets/images/35.png";
 import estetica3 from "../assets/images/34.png";
@@ -84,19 +84,91 @@ const photos = [
 
     <div class="grid grid-cols-2 gap-4">
       {
-        photos.map(({ src, alt }) => (
-          <div class="overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10">
+        photos.map(({ src, alt }, index) => (
+          <button
+            type="button"
+            data-lightbox-trigger={index}
+            aria-label={`Ampliar imagem: ${alt}`}
+            class="group overflow-hidden rounded-2xl shadow-lg shadow-salvia-900/10 cursor-zoom-in"
+          >
             <Image
               src={src}
               alt={alt}
               widths={[240, 380, 560]}
               sizes="(min-width: 1024px) 182px, 45vw"
               loading="lazy"
-              class="aspect-[4/5] w-full object-cover"
+              class="aspect-[4/5] w-full object-cover transition duration-300 group-hover:scale-105"
             />
-          </div>
+          </button>
         ))
       }
     </div>
   </div>
+
+  <dialog
+    id="estetica-lightbox"
+    aria-label="Imagem ampliada"
+    class="m-auto max-h-[90vh] max-w-[90vw] bg-transparent p-0 backdrop:bg-tinta/80"
+  >
+    <button
+      type="button"
+      data-lightbox-close
+      aria-label="Fechar"
+      class="fixed top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-creme text-tinta shadow-lg ring-1 ring-salvia-200 transition hover:bg-terracota-50"
+    >
+      <X size={20} stroke-width={2} />
+    </button>
+    {
+      photos.map(({ src, alt }, index) => (
+        <Image
+          src={src}
+          alt={alt}
+          data-lightbox-image={index}
+          widths={[400, 700, 1000]}
+          sizes="90vw"
+          class="hidden max-h-[85vh] max-w-[90vw] w-auto rounded-2xl object-contain"
+        />
+      ))
+    }
+  </dialog>
 </section>
+
+<script>
+  function setupLightbox() {
+    const dialog = document.getElementById(
+      "estetica-lightbox",
+    ) as HTMLDialogElement | null;
+    if (!dialog) return;
+
+    const triggers = dialog
+      .closest("section")
+      ?.querySelectorAll<HTMLButtonElement>("[data-lightbox-trigger]");
+    const images = dialog.querySelectorAll<HTMLImageElement>(
+      "[data-lightbox-image]",
+    );
+    const closeBtn = dialog.querySelector<HTMLButtonElement>(
+      "[data-lightbox-close]",
+    );
+
+    triggers?.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const index = trigger.dataset.lightboxTrigger;
+        images.forEach((img) => {
+          img.classList.toggle(
+            "hidden",
+            img.dataset.lightboxImage !== index,
+          );
+        });
+        dialog.showModal();
+      });
+    });
+
+    closeBtn?.addEventListener("click", () => dialog.close());
+
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+
+  setupLightbox();
+</script>
