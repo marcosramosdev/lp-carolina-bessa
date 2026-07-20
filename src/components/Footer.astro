@@ -1,16 +1,16 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../assets/logo/CD_horizontal branco.png";
-import { CLINIC, waLink, WA_MESSAGES } from "../consts";
+import { Image } from 'astro:assets';
+import logo from '../assets/logo/CD_horizontal branco.png';
+import { CLINIC, waLink, WA_MESSAGES } from '../consts';
 
 const currentYear = new Date().getFullYear();
 
 // Página de Política de Privacidade ainda não existe — link fica desativado até ser criada.
 const footerLinks = [
-  { label: "Início", href: "/" },
-  { label: "Tratamentos", href: "#tratamentos" },
-  { label: "Localização", href: "#localizacao" },
-  { label: "Falar pelo WhatsApp", href: waLink(WA_MESSAGES.geral) },
+  { label: 'Início', href: '/' },
+  { label: 'Tratamentos', href: '#tratamentos' },
+  { label: 'Localização', href: '#localizacao' },
+  { label: 'Falar pelo WhatsApp', href: waLink(WA_MESSAGES.geral) },
 ];
 ---
 
@@ -18,14 +18,21 @@ const footerLinks = [
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
     <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
       <div>
-        <Image src={logo} alt="Dra. Carolina Bessa | Odontologia" height={36} width={160} />
+        <Image
+          src={logo}
+          alt="Dra. Carolina Bessa | Odontologia"
+          height={36}
+          width={160}
+        />
         <p class="mt-4 text-sm">{CLINIC.building}</p>
         <p class="text-sm">{CLINIC.street}, {CLINIC.suite}</p>
         <p class="text-sm">{CLINIC.neighborhood}</p>
       </div>
 
       <nav aria-label="Links do rodapé">
-        <p class="text-eyebrow font-semibold uppercase text-salvia-300">Links</p>
+        <p class="text-eyebrow font-semibold uppercase text-salvia-300">
+          Links
+        </p>
         <ul class="mt-4 space-y-2.5">
           {
             footerLinks.map((link) => (
@@ -36,17 +43,18 @@ const footerLinks = [
               </li>
             ))
           }
-          <li class="text-sm text-salvia-400">Política de Privacidade (em preparação)</li>
         </ul>
       </nav>
 
       <div>
-        <p class="text-eyebrow font-semibold uppercase text-salvia-300">Dados profissionais</p>
+        <p class="text-eyebrow font-semibold uppercase text-salvia-300">
+          Dados profissionais
+        </p>
         <p class="mt-4 text-sm">{CLINIC.cro}</p>
         <p class="mt-4 text-xs leading-relaxed text-salvia-300">
-          As informações desta página têm caráter informativo e não substituem uma
-          avaliação odontológica. A indicação de qualquer tratamento depende da análise
-          individual do paciente.
+          As informações desta página têm caráter informativo e não substituem
+          uma avaliação odontológica. A indicação de qualquer tratamento depende
+          da análise individual do paciente.
         </p>
       </div>
     </div>
